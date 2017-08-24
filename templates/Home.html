@@ -1,0 +1,215 @@
+﻿<div ng-include="'templates/PartialPage/HomeNavigation.html?id=1'"></div>
+<!--Carousel Wrapper-->
+<!--Carousel Wrapper-->
+<div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
+    <!--Indicators-->
+
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <div class="view hm-black-light">
+                <img src="./img/luisiana.png" alt="First slide" class="img-fluid">
+            </div>
+            <div class="carousel-caption">
+                <h1>Turning big <strong>ideas</strong> into<span class="text-orange"> <strong>Courses</strong></span></h1>
+                <p>Proudly providing driven individuals and companies with the tools to succeed in the competitive security industry.
+                    <br />
+                    Our services set the standard in security training solutions.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="view hm-black-light">
+                <img src="./img/louisiana-1.jpg" alt="First slide" class="img-fluid">
+            </div>
+            <div class="carousel-caption">
+                <h1>Turning big <strong>ideas</strong> into<span class="text-orange"> <strong>Courses</strong></span></h1>
+                <p>Proudly providing driven individuals and companies with the tools to succeed in the competitive security industry.
+                    <br />
+                    Our services set the standard in security training solutions.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view hm-black-strong">
+                <img src="./img/louisiana-2.jpg" alt="Second slide" class="img-fluid">
+            </div>
+            <div class="carousel-caption">
+                <h1>Turning big <strong>ideas</strong> into<span class="text-orange"> <strong>Courses</strong></span></h1>
+                <p>Proudly providing driven individuals and companies with the tools to succeed in the competitive security industry.
+                    <br />
+                    Our services set the standard in security training solutions.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <!--Mask color-->
+            <div class="view hm-black-slight">
+                <img src="./img/louisiana-3.jpg" alt="Third slide" class="img-fluid">
+            </div>
+            <div class="carousel-caption">
+                <h1>Turning big <strong>ideas</strong> into<span class="text-orange"> <strong>Courses</strong></span></h1>
+                <p>Proudly providing driven individuals and companies with the tools to succeed in the competitive security industry.
+                    <br />
+                    Our services set the standard in security training solutions.</p>
+            </div>
+        </div>
+    </div>
+    <!--/.Slides-->
+    <!--Controls-->
+    <a class="left carousel-control md-default1-theme" href="#carousel-example-2" role="button" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a><a class="right carousel-control md-default1-theme" href="#carousel-example-2" role="button" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+    <!--/.Controls-->
+</div>
+<!--/.Carousel Wrapper-->
+<!--/.Carousel Wrapper-->
+<div class="container">
+
+    <!-- Marketing Icons Section -->
+
+    <div class="col-lg-12 text-center page-header">
+        <h1><strong>Our <span class="text-orange">Services</span></strong> </h1>
+        <p class="text-cente">Whether you want to start a career as a security officer, or want to become a trained security guard instructor,<br />
+            you will find the course that is right for you. </p>
+    </div>
+    <div class="row">
+        <div class="row" ng-controller="CoursesCntrl">
+            <!--First columnn-->
+            <div class="col-sm-6 col-md-3 col-lg-3 text-center" ng-repeat="MCourse in MandatoryCourses">
+                <div class="services">
+                    <img class="img-responsive" src="img/{{MCourse.ImageFile}}" alt="Generic placeholder image" width="100%">
+                    <h2>{{MCourse.CourseName}}</h2>
+                    <p class="text-xt">{{MCourse.Description}}</p>
+
+                    <p><a class="btn primary-button" href="#"  role="button" ng-click="AddToCart(MCourse,'Course','Purchase')" ng-if="!MCourse.UserCourseId" >Join Course</a></p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>
+<!--Main layout-->
+<div class="container-fluid featurette">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 offset-md-1">
+                    <h2 class="featurette-heading">SORT DEMO</h2>
+                    <p class="lead">The SORT CA State Board of Private Security Examiners is a state government regulatory agency within the Department of Public Safety and Corrections. The Sort CA establishes and enforces procedures and laws related to private security organizations. Licensing and training standards are established by the Sort CA. The Sort CA’s headquarters is located in Baton Rouge, and members of the board consist of 9 qualified, governor appointed individuals. The current Executive Director of the Sort CA, Fabian P. Blache III, has over 31 years of experience protecting the public. </p>
+                    <p>
+                        <a class="btn primary-button" onclick="scrollToTop();" ui-sref="about" role="button">Know More</a>
+                        &nbsp;&nbsp; 
+              <a class="btn primary-bdr-button" onclick="scrollToTop();" ui-sref="contact" role="button">Get in Touch</a>
+                    </p>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-5 padding-remove">
+                    <img class="featurette-image img-responsive center-block" src="./img/lead.png" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- About Us second dropdown our board member page page -->
+<div class="container-fluid hide">
+    <div class="row">
+        <img src="./img/inner-banner.jpg" width="100%" />
+    </div>
+</div>
+
+<div class="container hide">
+    <div class="col-lg-12  page-header text-center">
+        <h1><strong>Our <span class="text-orange">Board Members</span></strong> </h1>
+
+
+    </div>
+    <div class="row">
+        <div class="col-lg-7">
+            <p>The SORT CA State Board of Private Security Examiners is an agency of the state government in the Department of Public Safety and Corrections.  The board consists of nine (9) members appointed by the governor.  One member shall be appointed from and shall reside in each of the five public service commission districts established by law.  Four members shall be appointed from the state at large.  Each member shall be a citizen of the United States of America, a resident of Louisiana, at least thirty years of age, and shall have been actively engaged in the private security business for at least five years.  One of the members appointed at large shall be a representative of a nationally operated security company.  Each member shall be licensed or registered with the board or a corporate officer of a licensed company.</p>
+            <p><b>DISTRICT (1) ONE – RITCHIE RIVERS- Rivers Security, LLC, Amite, LA – 985-747-2478</b></p>
+            <p>DISTRICT (2) TWO – MARK A. WILLIAMS – TMI Enterprises, Inc., – Baton Rouge, LA -225-336-4093</p>
+
+            <p><b>DISTRICT (3) THREE – MARIAN H. PIERRE, Interim Chair – Crescent Guardian Inc., – New Orleans , LA – 504-483-7811</b></p>
+            <p>DISTRICT (4) FOUR – WILBERT SANDERS, Jr., – Kingdom Security – Forest Hill, LA – 318-229-3315</p>
+
+            <p><b>DISTRICT (5) FIVE – HECTOR ECHEGOYEN, KEHOE GROUP, Benton, LA – 337-292-4205</b></p>
+            <p>AT LARGE – MARIA V. LANDRY – Vinson Guard Service, New Orleans – 504-529-2260</p>
+
+            <p><b>AT LARGE – EDWARD ROBINSON Sr., – L&R Security, New Orleans, LA -504-943-3191</b></p>
+            <p>AT LARGE – DURELL P. PELLEGRIN – Loomis Armored, Inc., – Mandeville, LA – 504-648-0399</p>
+
+            <p><b>AT LARGE – MISTY FINCHUM – Brimstone Services, Inc., Sulphur, LA – 337-540-1442</b></p>
+            <p>&nbsp;</p>
+        </div>
+
+        <div class="col-lg-5">
+            <img src="./img/districts.jpg" class="img-fluid" />
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+        </div>
+    </div>
+</div>
+
+<!-- About Us second dropdown our board member page page end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<script>
+
+    function init_map() {
+
+        var var_location = new google.maps.LatLng(29.552177, -98.305598);
+
+        var var_mapoptions = {
+            center: var_location,
+
+            zoom: 14
+        };
+
+        var var_marker = new google.maps.Marker({
+            position: var_location,
+            map: var_map,
+            title: "Texas Department of Public Safety "
+        });
+
+        var var_map = new google.maps.Map(document.getElementById("map-container"),
+                var_mapoptions);
+
+        var_marker.setMap(var_map);
+
+    }
+
+    google.maps.event.addDomListener(window, 'load', init_map);
+</script>
+<script>
+    new WOW().init();
+</script>

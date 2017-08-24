@@ -1,0 +1,88 @@
+  <!-- Sidebar navigation -->
+        <ul id="slide-out" class="side-nav fixed custom-scrollbar">
+
+            <!-- Logo -->
+            <li>
+                <div class="logo-wrapper waves-light">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <p><a class="edit-profile" ui-sref="edit_profile">Edit</a></p>
+                </div>
+            </li><br>
+            <!--/. Logo -->
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li><a ui-sref="courses" class="waves-effect"><i class="fa fa-home" aria-hidden="true"></i> Home </a>
+                                </li>
+                    <li><a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-briefcase" aria-hidden="true"></i> User Allocation</a>
+                        
+                    </li>
+                    <li><a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-users" aria-hidden="true"></i>  User Management</a>
+                       
+                    </li>
+                     <li><a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-building-o" aria-hidden="true"></i>  Department</a>
+                    </li>
+                    
+                  
+                    <li><a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-question" aria-hidden="true"></i> Training Status</a>
+                        
+                    </li>
+                   <li>
+                       <a ui-sref="certificates" class="collapsible-header waves-effect arrow-r"><i class="fa fa-trophy " aria-hidden="true"></i>Certificate</a>
+                   </li> 
+                   <li>
+                       <a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-wpforms " aria-hidden="true"></i>Reports</a>
+                   </li>
+                    <li>
+                       <a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Change Password</a>
+                   </li>
+                    <li>
+                       <a ui-sref="#" class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-picture-o" aria-hidden="true"></i>Upload Logo</a>
+                   </li>
+                    <li>
+                       <a href="dashboard-guest.html" class="collapsible-header waves-effect arrow-r"><i class="fa fa-sign-out" aria-hidden="true"></i>Log Out</a>
+                   </li>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+        </ul>
+        <!--/. Sidebar navigation -->
+
+        <!--Navbar-->
+        <nav id="state-navbar" class="navbar navbar-fixed-top scrolling-navbar double-nav">
+
+            <!-- SideNav slide-out button -->
+            <div class="pull-left">
+                <a data-target="#slide-out" data-toggle="collapse" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+            </div>
+               <span class="pull-left">
+                <a href="index.html">
+                 <img id="dashboard-logo" src="../img/SORT-Logo-v1.png" alt="">
+                 </a>
+            </span>
+            <!-- Breadcrumb-->
+            <div class="breadcrumb-dn">
+                <p><i class="fa fa-dashboard" aria-hidden="true"></i> ACME Inc. Dashboard </p>
+            </div>
+            <ul class="nav navbar-nav pull-right">
+                <li class="nav-item ">
+                    <a ui-sref="cart" class="nav-link"> <span class="label  z-depth-1">6</span> <i class="fa fa-shopping-cart"></i> <span class="hidden-sm-down">Cart</span></a>
+                </li>
+               
+                
+                <li class="nav-item ">
+                    <a href="dashboard-guest.html" class="nav-link"><i class="fa fa-sign-out"></i> <span class="hidden-sm-down">Logout</span></a>
+                </li>
+                 <li class="nav-item ">
+                    <a ui-sref="contact" class="nav-link"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
+                </li>
+            </ul>
+        </nav>
+        <!--/.Navbar-->
+        
+       <script>
+ // Initialize collapse button
+        $(".button-collapse").sideNav();
+        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+//        $('.collapsible').collapsible();
+</script>

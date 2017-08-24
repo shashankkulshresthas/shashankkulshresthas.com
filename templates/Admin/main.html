@@ -1,0 +1,95 @@
+﻿ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    .logo-wrapper .fa {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+    .menu {
+    width: 100%;
+}
+    .fa {
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+}
+    .md-toggle-icon md-icon {
+    height: 15px!important;
+}
+</style>
+<link href="css/angular-material-sidenav.css" rel="stylesheet" />
+<div ng-include="'templates/PartialPage/AdminNavigation.html'"></div>
+    <div layout="row" flex ng-controller="SideMenuCntrl">
+        <md-sidenav layout="column" md-theme="default1" class="md-sidenav-left  md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          <md-toolbar class="md-tall">
+        <span flex></span>
+        <div layout="column" class="md-toolbar-tools-bottom inset">
+       <div class="logo-wrapper waves-light">
+                    <i class="fa fa-user" aria-hidden="true" style="color:white"></i>
+           <p> {{LoggedInUser.FirstName}} {{LoggedInUser.LastName}}</p>
+   
+                </div>   
+        
+          <span></span>
+  
+        
+        </div>
+      </md-toolbar>
+            
+             <ss-sidenav flex menu="menu"></ss-sidenav>
+     <!-- <md-list ng-click="closeSidenav()" id="mainList">
+            <md-list-item ui-sref="Dashboard"  ng-if="isAuthorized([userRoles.Admin])">
+        <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>       
+        <p>Dashboard</p>
+   
+      </md-list-item>
+          
+           <md-list-item ui-sref="ManageCourse" ng-if="isAuthorized([userRoles.Admin])">
+        <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>       
+        <p>Manage Course</p>
+   
+      </md-list-item>
+            <md-list-item ui-sref="ManagePage"  ng-if="isAuthorized([userRoles.Admin])">
+          <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>     
+        <p>Manage Modules</p>
+   
+      </md-list-item>
+            <md-list-item ui-sref="ManagePage"  ng-if="isAuthorized([userRoles.Admin])">
+        <md-icon class="md-default-theme" class="material-icons">&#xE8CD;</md-icon>        
+        <p>Manage Quiz</p>
+   
+      </md-list-item>
+
+       
+      <md-list-item ui-sref="ManagePage"  ng-if="isAuthorized(userRoles.Admin)">
+        <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>        
+        <p>Manage Page</p>
+      </md-list-item>
+                  
+          <md-list-item ui-sref="ManagePage"  ng-if="isAuthorized(userRoles.Admin)">
+        <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>        
+        <p>Manage Company</p>
+      </md-list-item>
+                 
+              <md-list-item ui-sref="ManagePage"  ng-if="isAuthorized(userRoles.Admin)">
+        <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>        
+        <p>Manage Users</p>
+      </md-list-item>
+                
+              <md-list-item ui-sref="ManagePage"  ng-if="isAuthorized(userRoles.Admin)">
+        <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>        
+        <p>Configuration</p>
+      </md-list-item>
+
+    </md-list>-->
+        </md-sidenav>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+                 <ui-view layout="column" layout-fill md-theme="default1" style="min-height:550px;">
+         
+          
+        </ui-view>
+            </md-content>
+        </div>
+    </div>

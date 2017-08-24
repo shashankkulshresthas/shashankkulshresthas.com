@@ -1,0 +1,72 @@
+
+<section class="section">
+  <div class="columns">
+    <div class="column header-bg wow fadeIn animated animated animated" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s;">
+      <h1 class="sort-heading wow fadeInDown animated animated animated" style="visibility: visible; opacity: 1;">SORT</h1>
+    </div>
+  </div>
+  <div class="columns masthead">
+    <div class="column">
+      <h2 class="mastheadtitle" style="opacity: 0; transform: translateX(0px);">Security Officer Regulation Training </h2>
+    </div>
+  </div>
+  <div class="columns right-img-bdr demo-bg-1">
+    <div class="column"> <img src="HTML%20Slide/images/demo1-d.jpg" class="e1" style="opacity:0" width="100%"> </div>
+    <div class="column">
+      <div class="columns">
+        <div class="column"> <img src="HTML%20Slide/images/demo1-c.png" class="e2" style="opacity:0" width="100%"> </div>
+        <div class="column"> <img src="HTML%20Slide/images/demo1-e.png" class="e3" style="opacity:0" width="100%"> </div>
+      </div>
+      <div class="columns">
+        <div class="column"> </div>
+        <div class="column">
+          <p align="right" class="e4" style="opacity:0"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<audio autoplay>
+  <source src="audio/demo1.mp3" type="audio/mp3">
+</audio>
+<script>
+
+
+ Tweene.registerMacro('slideUp', function (duration) {
+            this.from({opacity:0,x:'-=200'})
+                .to({ opacity:1, x: '0' })
+                .duration(duration || Tweene.defaultDuration);
+        });
+       // var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+     
+        var child1 = Tweene.get($('.sort-heading')).to({ opacity: 1}, 2000, 'easeOutQuad');
+        var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+        var child3 = Tweene.get($('.e1')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child4 = Tweene.get($('.e2')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child5 = Tweene.get($('.e3')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+		var child6 = Tweene.get($('.e4')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+    
+
+	
+	
+
+
+        var t = Tweene.line();
+        t.add(child1).add(child2, 100).add(child3, 4000).add(child4, 5000).add(child5, 6000).add(child6, 5000);
+      
+        function animateElems() {
+            // define element variables
+            t.play();
+           // $.Velocity.RunSequence(sequence);
+        }
+
+        function stopAnimation() {
+            t.pause();
+        }
+        function resumeAnimation() {
+            t.resume();
+        }
+
+        animateElems();
+
+    </script> 

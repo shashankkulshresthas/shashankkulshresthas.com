@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Sort" ng-cloak>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<title>SORT</title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="../css/mdb.min.css" rel="stylesheet">
+
+
+  <!-- Custom styles -->
+<link href="../css/style.css" rel="stylesheet"> 
+<style>
+  
+
+    </style>
+<!-- <ng-include src="'head-scripts.html'"></ng-include>-->
+</head>
+
+<body class="fixed-sn mdb-skin">
+<header ng-include src="'state-nav-member.html'"></header>
+<div>
+
+
+
+<div ui-view></div><!--/ ui view-->
+
+<!--<div ng-include src="'home-page.html'"></div>-->
+    <!--/Main container-->
+  
+  
+   <footer ng-include src="'state-nav-footer.html'"></footer>
+   </div>
+    <!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="../js/Common/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../js/Common/tether.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular-sanitize.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../js/Common/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../js/Common/mdb.min.js"></script>
+
+ <script src="../js/Angular/sort_app.js"></script>
+<script>
+    // Show sideNav
+    $(".button-collapse").sideNav();
+
+    $('.button-collapse').sideNav('show');
+    // Hide sideNav
+    $('.button-collapse').sideNav('hide');
+</script>
+
+    <!-- Animations init-->
+<script>
+    new WOW().init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<section class="section">
+  <div class="columns">
+    <div class="column header-bg">
+      <h1 class="sort-heading">SORT</h1>
+    </div>
+  </div>
+  <div class="columns masthead">
+    <div class="column">
+      <h2 class="mastheadtitle"> Weapons of Mass Destruction - The 5 Categories</h2>
+    </div>
+  </div>
+  <div class="columns demo-bg-11 right-img-bdr">
+    <div class="column ">
+      <p class="e2" style="opacity:0; font-size: 30px;"><strong>Weapons of mass destruction are used to produce devastating effects with a single strike.</strong></p>
+    </div>
+  </div>
+  <div class="columns right-img-bdr">
+    <div class="column ">
+      <p class="e1" style="opacity:0" >Terrorists use weapons of mass destruction to inflict pain and suffering upon their targets.<br>
+        here are five primary categories of weapons of mass destruction.<br>
+        They are: </p>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-centered right-img-bdr"> <img src="HTML%20Slide/images/demo11a.jpg" class="img-responsive e3" width="100%" alt="" style="opacity:0"> </div>
+  </div>
+</section>
+<audio autoplay>
+  <source src="audio/demo11.mp3" type="audio/mp3">
+</audio>
+<script>
+
+
+ Tweene.registerMacro('slideUp', function (duration) {
+            this.from({opacity:0,x:'-=200'})
+                .to({ opacity:1, x: '0' })
+                .duration(duration || Tweene.defaultDuration);
+        });
+       // var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+     
+        var child1 = Tweene.get($('.sort-heading')).to({ opacity: 1}, 2000, 'easeOutQuad');
+        var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+        var child3 = Tweene.get($('.e1')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child4 = Tweene.get($('.e2')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child5 = Tweene.get($('.e3')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+    
+
+	
+	
+
+
+        var t = Tweene.line();
+        t.add(child1).add(child2, 100).add(child3, 10000).add(child4, 1000).add(child5, 17000);
+      
+        function animateElems() {
+            // define element variables
+            t.play();
+           // $.Velocity.RunSequence(sequence);
+        }
+
+        function stopAnimation() {
+            t.pause();
+        }
+        function resumeAnimation() {
+            t.resume();
+        }
+
+        animateElems();
+
+    </script> 

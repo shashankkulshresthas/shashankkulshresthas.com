@@ -1,0 +1,37 @@
+﻿<div class="html-container1 slide_container" id="container" ng-hide="SelectedPage.hasQuiz" ng-if="SelectedPage.PageTypeId==4">
+</div>
+
+<div class="html-container1" ng-if="SelectedPage.PageTypeId==5">
+
+  <video autoplay id="myvideo" width="100%" height="100%"  ng-mouseover="vidhover()">
+        <source src="{{SelectedPage.FilePath}}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>   
+</div>
+<div class="html-container1" ng-if="SelectedPage.PageTypeId==10">
+
+    <angular-youtube video="SelectedPage.FilePath"></angular-youtube>  
+</div>
+
+<div class="player-panel" ng-hide="isReview">
+    <div class="play-control">
+
+        <div class="pull-left" ng-hide="SelectedPage.hasQuiz || SelectedPage.PageTypeId==10">
+            <a id="play" ng-show="isPause" ng-click="ResumeSlide()" ><i class="fa fa-play fa-1x"></i></a>
+            <a id="pause" ng-hide="isPause" ng-click="PauseSlide()"><i class="fa fa-pause"></i></a>
+            <a ui-sref="#" id="rewind" ng-click="ReLoadSlide(SelectedPage.PageId,SelectedPage.hasQuiz)"><i class="fa fa-rotate-right fa-1x"></i></a>
+            {{audio.currentTime | trackTime}}{{Pages.FilePath}} 
+        </div>
+        <div class="pull-right">
+            <a ng-show="SelectedPage.PreviousPageNumber>0" ng-click="LoadSlide(SelectedPage.PreviousPageNumber,SelectedPage.hasQuiz)" id="prev"><i class="fa fa-arrow-left fa-1x"></i></a>
+            <span>{{SelectedPage.DisplaySequence}} of {{Pages.length}}</span>
+            <a ng-show="(SelectedPage.TrainingStatusId==3 || SelectedPage.TrainingSessionId>0) && SelectedPage.NextPageNumber>0" ng-click="LoadSlide(SelectedPage.NextPageNumber,SelectedPage.hasQuiz)" id="next"><i class="fa fa-arrow-right fa-1x"></i></a>
+
+            <!-- <a ui-sref="#"><i class="fa fa-arrows-alt fa-1x"></i></a>-->
+            <!--  <a ui-sref="#" onclick="FullScreen()"><i class="fa fa-arrows-alt fa-1x"></i></a>-->
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+

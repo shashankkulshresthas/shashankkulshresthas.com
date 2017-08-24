@@ -1,0 +1,20 @@
+﻿<footer>
+        <section class="container" ng-hide="LoggedInUser.UserType=='Admin'">
+             
+        </section>
+        <section class="copyright">
+            <section class="container">
+                <div class="row">
+                    <div class="col col-sm-6 col-md-7 col-lg-7">Copyright 2017. ProtaTECH Inc. All Rights Reserved. </div>
+                    <div class="col col-sm-6 col-md-5 col-lg-5">
+                        <ul class="privacy">
+                            <li><a ng-click="showTermsDialoge($event);">Terms &amp; Conditions</a></li>
+                            <li><a ng-click="showprivacyDialoge($event);">Privacy Policy </a></li>
+                            <li><a onclick="scrollToTop();" ui-sref="contact">Contact Us </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <div class="scroll-top-wrapper" onclick="scrollToTop();"><span class="scroll-top-inner"><i class="fa fa-2x fa-arrow-circle-up"></i></span></div>
+    </footer>

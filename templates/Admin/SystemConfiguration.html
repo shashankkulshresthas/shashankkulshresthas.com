@@ -1,0 +1,67 @@
+﻿<div layout="column" layout-fill class="md-whiteframe-z2 relative">
+
+
+
+    <form name="frm_sysconfig" ng-submit="frm_sysconfig.$valid && SaveConfig()" autocomplete="nope">
+  
+            <md-content layout-padding  class="cssSlideUp card">
+     <div ng-init="GetSystemConfiguration()">
+      
+         <div ng-repeat="config in SystemConfiguration | filter:'Expiration'">
+           
+          <md-input-container class="md-block">                                      
+                  <label>{{config.Key}}</label>        
+                    <input numeric-only name="config.Key_{{$index}}" class="txtPromoName" ng-model="config.Value" maxlength="{{config.MaxLength}}"  type="text" required />     
+                 <div ng-messages="frm_sysconfig['config.Key_' + $index].$error">
+                  
+                     <div ng-message="required">{{config.Key}} required field</div>
+                     <div ng-message="md-maxlength">The {{config.Key}} count cannot exceed {{config.MaxLength}}  in length</div>
+                   
+                  </div>                       
+             </md-input-container>
+           </div>
+
+     
+         <div ng-repeat="config in SystemConfiguration | filter:'Security'">
+           
+          <md-input-container class="md-block">                                      
+                  <label>{{config.Key}}</label>        
+                    <input numeric-only name="config.Key_{{$index}}" class="txtPromoName" ng-model="config.Value" maxlength="{{config.MaxLength}}"  type="text" required/>     
+                 <div ng-messages="frm_sysconfig['config.Key_' + $index].$error">
+                  
+                     <div ng-message="required">{{config.Key}} required field</div>
+                     <div ng-message="md-maxlength">The {{config.Key}} count cannot exceed {{config.MaxLength}}  in length</div>
+                   
+                  </div>                       
+             </md-input-container>
+           </div>
+        
+         <div ng-repeat="config in SystemConfiguration | filter:'PaymentGateway'">
+          
+          <md-input-container class="md-block">                                      
+                 <!-- <label>{{config.Key}}</label> -->       
+                     <md-radio-group layout="row"  ng-model="config.Value" >
+  <md-radio-button value="true" class="md-primary">True</md-radio-button>
+  <md-radio-button value="false"> False</md-radio-button>
+</md-radio-group>
+
+            
+
+                 <div ng-messages="frm_sysconfig['config.Key_' + $index].$error">
+                  
+                     <div ng-message="required">{{config.Key}} required field</div>
+                     <div ng-message="md-maxlength">The {{config.Key}} count cannot exceed {{config.MaxLength}}  in length</div>
+                   
+                  </div>                       
+             </md-input-container>
+           </div>
+            <div layout-gt-xs="row">
+
+
+                <md-button type="submit" promise-btn="SaveSytemConfigPromise" class="md-raised md-primary" ng-disabled="frm_sysconfig.$invalid"><span class="btn-spinner"></span> Submit</md-button>
+            </div>
+     </div>
+    </md-content>
+  
+    </form>
+</div>

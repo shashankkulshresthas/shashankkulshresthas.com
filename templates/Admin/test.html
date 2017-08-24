@@ -1,0 +1,12 @@
+﻿<textarea id="editor" ckeditor="editorOptions" ng-model="EditorContent"></textarea>
+
+<script>
+    CKEDITOR.replace('editor', {
+        toolbar:
+        [
+           ['tokens', 'Styles', 'Format', 'Bold', 'Italic'], ['Undo', 'Redo']
+        ],
+        extraPlugins: 'tokens'
+    }
+);
+</script>

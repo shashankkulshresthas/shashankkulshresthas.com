@@ -1,0 +1,219 @@
+﻿<style>
+    md-input-container {
+    
+    margin: 18px 0 0 0;
+}
+</style>
+
+<form name="frmUser" ng-submit="frmUser.$valid && uploadData()" autocomplete="nope">
+
+
+    <div class="pt-3 btm-space card" layout-padding>
+        <div class="ng-scope">
+
+            <h1>Upload Company's Users</h1>
+
+            <div class="ng-scope">
+                <div>
+                    <input type="file" ng-file-select="onFileSelect($files)" accept=".xlsx,xls" ng-model="fileToUpload.name" btn-promise>
+                    {{errorMsg}}
+                </div>
+                <a ng-click="DownloadSample()">Download Sample File</a>
+            </div>
+            <div>
+            </div>
+        </div>
+        <md-toolbar class="md-table-toolbar md-default" ng-show="!options.rowSelection || !selected.length">
+  <div class="md-toolbar-tools">
+    <span>Users</span>
+    <span flex></span>
+  
+  </div>
+</md-toolbar>
+
+
+<md-table-container>
+  <table data-md-table  data-ng-model="selected" md-progress="promise">
+    <!-- <thead md-head md-order="query.order">
+      <tr md-row>
+        <th md-column ng-repeat="column in columns" md-numeric="column.numeric" md-order-by="{{column.orderBy}}">
+          <span>{{column.name}}</span>
+          <span ng-if="column.unit">({{column.unit}})</span>
+        </th>
+      </tr>
+    </thead> -->
+    <thead ng-if="!options.decapitate" md-head data-md-order="query.order" md-on-reorder="onReorder">
+      <tr md-row>
+     
+           <th md-column md:order:by="FirstName">FirstName</th>
+                            <th md-column md:order:by="MiddleName">MiddleName</th>
+                            <th md-column md:order:by="LastName">LastName</th>
+           <th md-column md:order:by="Email">Email</th>
+          
+                            <th md-column md:order:by="SSN">SSN</th>
+            <th md-column md:order:by="PrimaryPhone">PrimaryPhone</th>
+
+                            <th md-column md:order:by="AlternatePhone">AlternatePhone</th>
+                            <th md-column md:order:by="Address">Address</th>
+                            <th md-column md:order:by="City">City</th>
+                            <th md-column md:order:by="StateName">StateName</th>
+                            <th md-column md:order:by="ZIP">ZIP</th>                          
+                           
+                            <th md-column>Operation</th>
+
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row  data-ng-repeat="User in uploaduserlist | filter: filter.search | orderBy: query.order">
+    
+                           
+                            <td md-cell>
+                                 <div layout-gt-xs="row">
+                               
+                                      <md-input-container class="md-block">
+              <input  name="firstname_{{$index}}" ng-model="User.FirstName" md-autofocus required maxlength="100"/>
+           <div ng-messages="frmUser['firstname_' + $index].$error">
+                     <div ng-message="required">First Name is required.</div>
+                  </div>
+              </md-input-container>   
+                               </div>
+                            </td>
+                            <td md-cell>
+
+                                  <md-input-container class="md-block">
+          
+              <input   name="MiddleName_{{$index}}" ng-model="User.MiddleName"  maxlength="100"/>
+         
+              </md-input-container>
+                            </td>
+                            <td md-cell>
+                                                              
+                                 <md-input-container class="md-block">
+          
+              <input   name="LastName_{{$index}}" ng-model="User.LastName"  required maxlength="100"/>
+           <div ng-messages="frmUser['LastName_' + $index].$error">
+                     <div ng-message="required">Last Name is required.</div>
+                  </div>
+              </md-input-container>
+                            </td>
+           <td md-cell>
+                                    
+                              
+                                 <md-input-container class="md-block">
+            
+              <input type=email name="Email_{{$index}}" ng-model="User.Email" required maxlength="50" ng-change="validateEmail(User,$index)"/>
+            <div ng-messages="frmUser['Email_' + $index].$error">
+                     <div ng-message="required">Email is required.</div>
+              <div ng-message="email">Email is invalid.</div>
+             <div ng-message="emailExists">Email  already registered with us.</div>
+                  </div>
+             </md-input-container>
+                            </td>
+                            <td md-cell>
+
+                                 <md-input-container class="md-block">
+                                      
+                  <input name="SSN_{{$index}}"  wt-easy-mask='999-99-9999'  maxlength="11" ng-model="User.SSN"  ng-pattern="/^(?!(000|666|9))\d{3}-(?!00)\d{2}-(?!0000)\d{4}$/">                  
+                  <div ng-messages="frmUser['SSN_' + $index].$error">
+                        <div ng-message="required">SSN is required.</div>
+                        <div ng-message="pattern">Please enter a valid SSN.</div>
+                  </div>
+               </md-input-container>
+
+                            </td>
+
+           <td md-cell>
+                               
+                                  <md-input-container class="md-block">
+                                      
+                  <input  name="PrimaryPhone_{{$index}}"  ng-model="User.PrimaryPhone" maxlength="13"  wt-easy-mask='(999)999-9999'  ng-pattern="/^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/" required> 
+                        
+                  <div ng-messages="frmUser['PrimaryPhone_' + $index].$error">
+                       <div ng-message="required" class="my-message">Please enter phone number.</div>
+                       <div ng-message="pattern">Please enter valid phone number.</div>
+                  </div>
+               </md-input-container>
+                            </td>
+                            <td md-cell>
+
+                                 <md-input-container class="md-block">
+                                      
+                  <input name="AlternatePhone_{{$index}}"  ng-model="User.AlternatePhone" maxlength="13"  wt-easy-mask='(999)999-9999'  ng-pattern="/^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/">
+                   
+                  <div ng-messages="frmUser['AlternatePhone_' + $index].$error">
+                      <div ng-message="pattern">Please enter valid phone number.</div>
+                  </div>
+               </md-input-container>
+                            </td>
+                            <td md-cell>
+
+                                 <md-input-container class="md-block">
+          
+              <input   name="Address_{{$index}}" ng-model="User.Address"  maxlength="100"/>
+         
+              </md-input-container>
+                            </td>
+                            <td md-cell>
+                                  <md-input-container class="md-block">
+          
+              <input   name="City_{{$index}}" ng-model="User.City"  maxlength="50"/>
+         
+              </md-input-container>
+
+                            </td>
+                            <td md-cell>
+                                   <md-input-container class="md-block">
+          
+              <input   name="StateName_{{$index}}" ng-model="User.StateName"  maxlength="50"/>
+         
+              </md-input-container>
+                            </td>
+                            <td md-cell>
+                                  <md-input-container class="md-block">
+         
+            <input name="ZIP_{{$index}}" ng-model="User.ZIP"  wt-easy-mask='99999' 
+                    ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+
+            <div ng-messages="frmUser['ZIP_' + $index].$error" role="alert">
+              <div ng-message="pattern" class="my-message">That doesn't look like a valid zip
+                code.
+              </div>
+              <div ng-message="md-maxlength" class="my-message">
+                 Zip code should not br greater than 5 digit.
+              </div>
+            </div>
+          </md-input-container>
+
+                            </td>
+                           
+                           
+                            <td md-cell><span class="table-remove glyphicon glyphicon-remove" onclick="removeRow()">Close</span></td>
+                       
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+  <div class="ssss">
+
+
+            
+            <div>
+                <md-button id="uploadData" ng-show="uploaduserlist.length>0" type="submit" class="md-raised md-primary" promise-btn="uploadUserPromise"><span class="btn-spinner"></span>Upload</md-button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+    function removeRow() {
+        $('#table table tr').each(function (index) {
+
+            $('#table table tr:eq(' + index + ') .table-remove').click(function () {
+
+                $('#table table tr:eq(' + index + ')').remove();
+
+            });
+
+        });
+    }
+</script>

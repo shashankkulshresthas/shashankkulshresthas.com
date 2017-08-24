@@ -1,0 +1,65 @@
+﻿
+
+
+
+<!--Main layout-->
+  <div class="col-lg-3 col-md-3 col-sm-6">
+
+                <!--Card-->
+   
+                <!--/.Card-->
+            </div>
+
+
+             <div class="row ">
+        <div class="col-sm-12">
+
+            
+            <!--Divider-->
+        
+            <!--Section: Products v.1-->
+             <!-- <div ng-show="ShowEmptyCourse" style="text-align:center;color:#0094ff;">Course is empty !</div>-->
+            <!--First column-->
+           <section id="core-exams" class="section" >
+                   <div class="divider-new md-padding" flex="100">
+                <h2 class="h2-responsive ">Purchased Packages</h2>
+            </div>
+  
+                <div layout="row" flex layout-wrap>
+                <div flex-xs="100" flex-sm="50" flex-md="50" flex="25"  ng-repeat="pkg in UserCourses" class="wow fadeIn center" data-wow-delay="0.2s">
+        <md-card>
+          <img src="../img/{{pkg.ImageFile}}" class="md-card-image" alt="user avatar">
+          <md-card-content  class="card-block text-xs-left" style="min-height:255px;">
+            
+                                <!--Category & Title-->
+                                    <span ng-if="pkg.Duration == '0'">
+                                   <span class="packages-hours">{{pkg.PackageName}}</span>
+                                    </span>
+                                    <span ng-if="pkg.Duration != '0'">
+                                    <span class="packages-card-title"><strong>{{pkg.Duration}}</strong></span><span class="packages-hours"> Hours</span>
+                                    </span>
+
+                                <!--Description-->
+                                <p class="card-text">{{pkg.Desc}}</p>
+
+                                <!--Card footer-->
+                               
+          </md-card-content>
+          <div class="md-actions" layout="row" layout-align="end center"  style="font-size: 1.3rem;">
+            Total license:
+            
+               <span flex></span>
+                     {{pkg.NoOfLicence}}                                    
+                           
+          </div>
+        </md-card>
+     </div>
+                    </div>
+             </section>
+            </div>
+            </div>
+               
+
+    
+    <!--/Main layout-->
+

@@ -1,0 +1,130 @@
+﻿
+ <div class="container-fluid"  ng-init="GetPackageDetailsById()"><br>
+
+         <section id="core-exams" class="section">
+                <!--Section heading-->
+                <h1 class="text-xs-left md-padding" data-wow-delay="0.2s">Packages</h1>
+                  <!--Packages row-->
+
+                 <div layout="row" flex layout-wrap>
+  <div flex-xs="100" flex-sm="50" flex-md="50" flex="25"  ng-repeat="pkg in GetPackageDetailsById" class="animated slideInRight" style="width:300px">
+        <md-card>
+          <img src="../img/{{pkg.ImageFile}}" class="md-card-image" alt="user avatar">
+          <md-card-content  class="card-block text-xs-left" style="min-height:255px;">
+            
+                                <!--Category & Title-->
+                                    <span ng-if="pkg.Duration == '0'">
+                                   <span class="packages-hours">{{pkg.PackageName}}</span>
+                                    </span>
+                                    <span ng-if="pkg.Duration != '0'">
+                                    <span class="packages-card-title"><strong>{{pkg.Duration}}</strong></span><span class="packages-hours"> Hours</span>
+                                    </span>
+              <input type="hidden" name="pkgMandateHours" value="{{pkg.MandateHours}}" /> 
+               <input type="hidden" name="pkgElectiveHours" value="{{pkg.ElectiveHours}}" /> 
+              <input type="hidden" name="pkgId" value="{{PackageID}}" /> 
+                                <!--Description-->
+                                <p class="card-text">{{pkg.Description}}</p>
+
+                                <!--Card footer-->
+                               
+          </md-card-content>
+          <div class="md-actions" layout="row" layout-align="end center"  style="font-size: 1.3rem;">
+            
+             ${{pkg.Price}}
+               <span flex></span>
+
+                           
+          </div>
+        </md-card>
+       <md-subheader class="md-no-sticky">Package Configuration</md-subheader>
+ 
+  <md-list-item class="secondary-button-padding">
+    <p>Mandatory ({{pkg.MandateHours}} hrs)</p>
+    <md-button class="md-secondary">{{SelectedMandateHours}}</md-button>
+  </md-list-item>
+
+          <md-list-item class="secondary-button-padding">
+    <p>Elective ({{pkg.ElectiveHours}} hrs)</p>
+    <md-button class="md-secondary"> {{SelectedElectiveHours}}</md-button>
+  </md-list-item>
+
+
+  <md-divider></md-divider>
+        <md-button ng-disabled="!AddCart" class="md-raised" ng-click="AddToCart(pkg,'Package')">{{ActionType}}</md-button>
+   
+  </div>
+
+      <div flex-xs="100" flex-sm="50" flex-md="50" flex="75">
+            <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Mandatory Courses">        
+         <md-content class="md-padding" ng-init="GetMandateCoursesByPkgId()">
+               <div layout="row" flex layout-wrap>
+
+       <div flex-xs="100" flex-sm="50" flex-md="50" flex="25" ng-repeat="MCourse in GetMandateCoursesByPkgId" >
+               <md-card>
+          <md-card-content class="card-block text-xs-left">
+            
+                                <!--Category & Title-->
+                               <h4 class="card-title"><strong>{{MCourse.CourseName}}</strong></h4>
+                                
+
+                                <!--Description-->
+                                <p class="card-text">{{MCourse.Description}}</p>
+
+                                <!--Card footer-->
+                               
+          </md-card-content>
+            <div class="md-actions" layout="row" layout-align="end center"  style="font-size: 1.3rem;">
+            ${{MCourse.Price}}
+            <span flex></span>
+            <md-checkbox ng-model="MCourse.CoursePriceId"   aria-label="Checkbox 1" ng-change="SelectPackagesCourses(MCourse,'Mandate')">
+            </md-checkbox>
+                           
+            </div>
+        </md-card></div>
+                   </div>
+      </md-content>
+      </md-tab>
+      <md-tab label="Elective Courses" > 
+        <md-content class="md-padding" ng-init="GetElectiveCoursesByPkgId()">
+        <div layout="row" flex layout-wrap>
+                <div flex-xs="100" flex-sm="50" flex-md="50" flex="25"  ng-repeat="ECourse in GetElectiveCoursesByPkgId"  class="animated slideInRight">
+        <md-card>
+          <md-card-content  class="card-block text-xs-left" style="min-height:255px;">
+            
+                                <!--Category & Title-->
+                               <h4 class="card-title"><strong>{{ECourse.CourseName}}</strong></h4>
+                                
+
+                                <!--Description-->
+                                <p class="card-text">{{ECourse.Description}}</p>
+
+                                <!--Card footer-->
+                               
+          </md-card-content>
+        
+          <div class="md-actions" layout="row" layout-align="end center"  style="font-size: 1.3rem;">
+          ${{ECourse.Price}}  
+                              <span flex></span> <md-checkbox  ng-model="ECourse.CoursePriceId" aria-label="Checkbox 1" ng-change="SelectPackagesCourses(ECourse,'Elective')">
+                               </md-checkbox>
+
+                         
+                                   
+                            
+          </div>
+        </md-card>
+     </div>
+           </div> </md-content>
+      </md-tab>
+   
+    </md-tabs>
+           
+        
+
+      </div>
+     
+                     </div>
+                </section>
+
+   
+      </div>

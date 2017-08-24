@@ -1,0 +1,224 @@
+ <style type="text/css">      
+
+        .draggable {
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+        }
+
+        .dropped {
+            position: static !important;
+            color:black  !important;
+        }      
+         
+
+          .ui-draggable {
+              cursor:pointer;
+          }
+
+         .drop-col .drag-col p {
+             color: white !important;
+             margin-bottom: 0px !important;
+         }
+
+         .redborder {                       
+
+            background:red;
+            color:rgba(255, 255, 255, 0.70);
+            font-weight:bold;
+         
+
+        }
+
+        .blueborder {            
+            background: #094eb3;
+             color:rgba(255, 255, 255, 0.70);
+            font-weight:bold;       
+           
+            
+        }
+
+          
+    </style>
+
+<section class="section">
+   <div class="columns">
+    <div class="column header-bg">
+      <h1 class="sort-heading">SORT</h1>
+    </div>
+  </div>
+  <div class="columns masthead">
+    <div class="column">
+      <h2 class="mastheadtitle">Activity</h2>
+    </div>
+  </div>
+  
+  <!--Chapter 5 Slide 47 Activity -->
+  <div class="clearfix"></div>
+  <section>
+    <div class="activity-header">
+      <h3>User your cursor to drag and drop each type of weapon of mass destruction onto its appropriate description.</h3>
+    </div>
+    <h3>&nbsp;</h3>
+    <div class="col-sm-12 hide">
+      <h3 class="quiz-h3"><b>List fo Slang Terms</b></h3>
+    </div>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg4 " >
+          <div  class="drop-col drop-height eNableDrop" data-Seq="1" id="dvDest">
+              <p>These types of weapons are user to spread mass disease</p>
+            <p class="num-count">1</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4 " >
+          <div class="drop-col drop-height drag-color eNableDrop " data-Seq="2" id="dvDest1">
+               <p>The result of these types of weapons include death, radition burns and cancer</p>
+            <p class="num-count">2</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4 " >
+          <div class="drop-col drop-height eNableDrop" data-Seq="3" id="dvDest2">
+               <p>These types of weapons are most commonly used to distroy property</p>
+            <p class="num-count">3</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4 " >
+          <div class="drop-col drop-height eNableDrop " data-Seq="4" id="dvDest3">
+               <p>Cyanide and sarin are example of these type of weapons</p>
+            <p class="num-count">4</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4 " >
+          <div class="drop-col drop-height eNableDrop" data-Seq="5" id="dvDest4">
+               <p>These types of weapons are used in approximately 70% of terrorist acts</p>
+            <p class="num-count">5</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4 hide" >
+          <div class="drop-col drop-height eNableDrop" data-Seq="6" id="dvDest5">
+               <p>These types of weapons are user to spread mass disease</p>
+            <p class="num-count">6</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12" id="msg">
+      <h3 class="quiz-h3"><b></b></h3>
+    </div>
+    <div class="col-sm-12" id="dvSource">
+      <div class="row"> 
+        <!-- Note Once the all item placed in drop container then this row will be hide after 300 MS -->
+        <div class="col-sm-6 col-md-4 col-lg4" >
+          <div class="drag-col drag-border" data-Seq="1"> 
+            <!-- This is correct answer for number 5 -->
+            <p class="matter">Chemical Weapons</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4" >
+          <div class="drag-col drag-border" data-Seq="2"> 
+            <!-- This is correct answer for number 2 -->
+            <p class="matter">Explosive Weapons</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4" >
+          <div class="drag-col drag-border" data-Seq="3"> 
+            <!-- This is correct answer for number 3 -->
+            <p class="matter">Biological Weapons</p>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+        <div class="col-sm-6 col-md-4 col-lg4" >
+          <div class="drag-col drag-border" data-Seq="4"> 
+            <!-- This is correct answer for number 6 -->
+            <p class="matter">Nuclear Weapons</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4" >
+          <div class="drag-col drag-border" data-Seq="5"> 
+            <!-- This is correct answer for number 1 -->
+            <p class="matter">Incendiary Weapons</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg4 hide" >
+          <div class="drag-col drag-border" data-Seq="6"> 
+            <!-- This is correct answer for number 4 -->
+            <p class="matter">State the fact that you are a security officer and that you have the authority to make the arrest based on the law.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="alert alert-success" style="display:none;">
+        <h3 style="text-align: center; color: black;"><b>Congratulations !!! <br />
+          <br />
+          You have completed this activity.<br />
+          <br />
+          Click on the Next button to continue with the course.</b></h3>
+      </div>
+    </div>
+  </section>
+</section>
+<audio autoplay>
+  <source src="audio/demo15.mp3" type="audio/mp3">
+</audio>
+<script type="text/javascript">
+
+        var selIndex = 0;
+
+        $(function () {
+            $("#dvSource div").draggable({
+                revert: "valid",
+                refreshPositions: true,
+                drag: function (event, ui) {
+                    ui.helper.addClass("draggable");
+                }
+            });
+
+            $(".eNableDrop").droppable({
+                drop: function (event, ui) {
+
+                    if ($("#dvDest div").length == 0) {
+                        //$("#dvDest").html("");
+                    }
+
+                    if (ui.draggable.attr('data-Seq') == $(this).attr('data-Seq')) {
+                        ui.draggable.addClass("dropped");
+                        ui.draggable.find('p').attr('style', 'width: 165px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;')
+                        ui.draggable.find('p').attr('title', $(ui.draggable).text().trim());
+
+                        $(this).append(ui.draggable);
+                        selIndex = selIndex + 1;
+                        var idname = $(this).attr('id');
+                        $(this).addClass("blueborder");
+
+
+                        setTimeout(function () {
+                            $('#' + idname).removeClass("blueborder");
+                        }, 1000);
+
+                    }
+                    else {
+
+                        var idname = $(this).attr('id');
+
+                        $(this).addClass("redborder");
+
+
+                        setTimeout(function () {
+                            $('#' + idname).removeClass("redborder");
+                        }, 2000);
+
+                    }
+
+                    if (selIndex == 5) {
+
+                        $("#next").attr("style", "display:inline-block");
+                        $(".alert-success").attr("style", "display:block");
+                        $("#dvSource").attr("style", "display:none");
+                        $("#msg").attr("style", "display:none");
+                    }
+                }
+            });
+
+        });
+    </script> 

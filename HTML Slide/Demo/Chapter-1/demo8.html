@@ -1,0 +1,58 @@
+
+<section class="hero is-fullheight demo8-bg" style="min-height: 80vh !important;">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-9">
+          <h3 class="check-heading">Quick Check<span class="fa fa-check-square-o"></span></h3>
+        </div>
+        <div class="column">
+          <p>Please click 'Next' to begin the quick check review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<audio autoplay>
+  <source src="audio/demo8.mp3" type="audio/mp3">
+</audio>
+<script>
+
+
+ Tweene.registerMacro('slideUp', function (duration) {
+            this.from({opacity:0,x:'-=200'})
+                .to({ opacity:1, x: '0' })
+                .duration(duration || Tweene.defaultDuration);
+        });
+       // var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+     
+        var child1 = Tweene.get($('.sort-heading')).to({ opacity: 1}, 2000, 'easeOutQuad');
+        var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+        var child3 = Tweene.get($('.e1')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child4 = Tweene.get($('.e2')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child5 = Tweene.get($('.e3')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+    
+
+	
+	
+
+
+        var t = Tweene.line();
+        t.add(child1).add(child2, 100).add(child3, 2000).add(child4, 9000).add(child5, 15000);
+      
+        function animateElems() {
+            // define element variables
+            t.play();
+           // $.Velocity.RunSequence(sequence);
+        }
+
+        function stopAnimation() {
+            t.pause();
+        }
+        function resumeAnimation() {
+            t.resume();
+        }
+
+        animateElems();
+
+    </script> 

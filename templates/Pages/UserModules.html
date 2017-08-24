@@ -1,0 +1,99 @@
+﻿ <div class="table-responsive hide">
+     <div class="col-sm-12">
+                <table class="table">  
+<thead>
+                        <tr>
+                            <th style="width:125px;">Chapter</th>
+                            <th style="width:125px;">No of Pages</th>
+                            <th>Progress</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    </table>
+                    </div>
+</div>
+<md-content class="md-padding" layout="column" layout-gt-sm="row" layout-wrap ng-init="GetUserModulesByCourseId()" ng-clock>
+     <div flex-xs="100" flex-sm="100" flex-md="100" flex="100"  ng-repeat="Module in GetUserModulesByCourseId"  >
+        
+             <div class="table-responsive hidden-xs-down">
+                <table class="table">
+                  
+                    <tbody>
+                        <tr>
+                            <td><strong>{{Module.ModuleName}}</strong></td>
+                            <td ><p  ng-if="Module.moduleTypeId==1">{{Module.TotalPages}} Pages</p></td>
+                            <td style="text-align:right;">  <p ng-if="Module.moduleTypeId==1">  <span ng-if="Module.Percentage == null">  
+                         0 %
+                        </span>
+                        <span ng-if="Module.Percentage != null" >  
+                         {{Module.Percentage}}%
+                        </span></p>
+                       </td>
+                       <td style="width:225px;">
+                        <progress class="progress progress-success" style="margin-top:7px;" value="{{Module.Percentage}}" max="100" ng-if="Module.moduleTypeId==1"></progress>
+                            </td>
+                            <td style="text-align:right;">  <span ng-if="Module.moduleTypeId==1 && Module.Button">     
+                         <a class="btn btn-primary" ng-click="GetPagesByModulesId(Module)" >{{Module.Button}}</a>
+              
+                               </span> </td>
+                            <td>
+                                 <div ng-if="Module.moduleTypeId==2 && Module.Button" style="text-align:center">     
+                         <span class="is-pulled-left " ng-if="Module.ResultTypeId==1"> <ng-md-icon icon="thumb_up" style="fill: green"></ng-md-icon> Passed By {{Module.Score}}%
+                               <p class="is-pulled-left"><a class="btn btn-primary" ng-click="Generate()">Download Certificate</a></p>
+              
+                               </span> 
+
+                       
+                                   <span class="is-pulled-left " ng-if="Module.ResultTypeId==2">You have Failed the exam</span>
+                                   <p class="is-pulled-left" ng-if="!Module.ResultTypeId"><a class="btn btn-primary" ng-click="GetPagesByModulesId(Module)" >{{Module.Button}}</a></p>
+                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>   <!--Card-->
+       
+               <md-card class="hidden-sm-up chapter">
+
+                    <!--Card image-->
+                                        <!--/.Card image-->
+                  
+                    <!--Card content-->
+                    <div class="card-block block-content">
+                        <!--Title-->
+                        <h4 class="card-title">{{Module.ModuleName}}</h4>
+                          <p ng-if="Module.moduleTypeId==1">  <span ng-if="Module.Percentage == null">  
+                         0 %
+                        </span>
+                        <span ng-if="Module.Percentage != null" >  
+                         {{Module.Percentage}}%
+                        </span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span>Total Pages : {{Module.TotalPages}}</span></p>
+                       
+                       
+                        <progress class="progress progress-success" value="{{Module.Percentage}}" max="100" ng-if="Module.moduleTypeId==1"></progress>
+                        <!--Text-->
+                       <span ng-if="Module.moduleTypeId==1 && Module.Button">     
+                         <p class="is-pulled-left"><a class="btn btn-primary" ng-click="GetPagesByModulesId(Module)" >{{Module.Button}}</a></p>
+              
+                               </span> 
+                        
+                              <div ng-if="Module.moduleTypeId==2" style="text-align:center">     
+                         <span class="is-pulled-left " ng-if="Module.ResultTypeId==1 && && Module.Button"> <ng-md-icon icon="thumb_up" style="fill: green"></ng-md-icon> Passed By {{Module.Score}}%
+                               <p class="is-pulled-left"><a class="btn btn-primary" ng-click="Generate()">Download Certificate</a></p>
+              
+                               </span> 
+
+                       
+                                   <span class="is-pulled-left " ng-if="Module.ResultTypeId==2">You have Failed the exam</span>
+                                   <p class="is-pulled-left" ng-if="!Module.ResultTypeId && && Module.Button"><a class="btn btn-primary" ng-click="GetPagesByModulesId(Module)" >{{Module.Button}}</a></p>
+                </div>
+                              
+
+                    </div>
+
+                    <!--/.Card content-->
+
+                </md-card>
+                <!--/.Card-->
+            </div>
+    </md-content>

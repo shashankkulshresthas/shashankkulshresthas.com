@@ -1,0 +1,10 @@
+﻿<div class="col-lg-12">
+         
+  <md-list-item class="secondary-button-padding" md-theme="default" ng-repeat="ques in ReviewQuestions" style="border:1px solid rgba(128, 128, 128, 0.16);">
+    <p style="margin-left:10px;">{{ques.QuestionDesc}}</p>
+    <md-button class="md-primary" ng-click="ReviewQuestion(ques)">Review</md-button>
+  </md-list-item>
+
+             
+         <p><button type="button" class="btn btn-primary" ng-click="StartExam()">Continue</button></p>
+   </div>

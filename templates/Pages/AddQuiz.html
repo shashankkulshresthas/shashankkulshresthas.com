@@ -1,0 +1,108 @@
+﻿<md-dialog aria-label="{{EditPage.PageName}}" class="md-hue-2">
+  <form>
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h2>{{EditPage.PageName}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+<ng-md-icon icon="clear"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="width:800px;max-height:810px; ">
+    
+          <md-content class="md-padding">
+          <form name="userForm">
+                <div layout="row" layout-xs="column" layout-sm="column">
+             
+        <md-input-container>
+          <md-switch ng-model="EditPage.hasQuiz"  class="md-hue-2">Page Type: {{EditPage.hasQuiz ? "Quiz" : "Slide"}}</md-switch>
+        </md-input-container>
+      </div>
+        <div layout-gt-sm="row">
+
+         
+            <md-input-container class="md-block" flex-gt-sm>
+            <label>Page</label>
+            <input ng-model="EditPage.PageName">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm ng-hide="EditPage.hasQuiz">
+            <label>Time to spend on page</label>
+            <input ng-model="EditPage.TimeToSpendOnPage">
+          </md-input-container>
+        </div>
+
+        <md-input-container class="md-block"  ng-hide="EditPage.hasQuiz">
+          <label>File Path</label>
+          <input ng-model="EditPage.FilePath">
+        </md-input-container>
+
+        <md-input-container class="md-block"  ng-hide="EditPage.hasQuiz">
+          <label>Audio File Path</label>
+          <input ng-model="EditPage.AudioPath">
+        </md-input-container>
+              
+ <!-- <form ng-submit="addTab(tTitle,tContent)" layout="column" class="md-padding" style="padding-top: 0;">
+    <div layout="row" layout-sm="column">
+      <div flex style="position: relative;">
+        <h2 class="md-subhead" style="position: absolute; bottom: 0; left: 0; margin: 0; font-weight: 500; text-transform: uppercase; line-height: 35px; white-space: nowrap;">Add a new Tab:</h2>
+      </div>
+      <md-input-container>
+        <label for="label">Label</label>
+        <input type="text" id="label" ng-model="tTitle">
+      </md-input-container>
+      <md-input-container>
+        <label for="content">Content</label>
+        <input type="text" id="content" ng-model="tContent">
+      </md-input-container>
+      <md-button class="add-tab md-primary md-raised" ng-disabled="!tTitle || !tContent" type="submit" style="margin-right: 0;">Add Tab</md-button>
+    </div>
+  </form>-->
+              {{PageQuestions.length}}
+   <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect ng-show="EditPage.hasQuiz">
+      <md-tab ng-repeat="ques in PageQuestions"
+              label="Question-{{$index+1}}">
+        <div class="demo-tab tab{{$index%3}}" style="padding: 25px;">
+         
+        <md-input-container class="md-block">
+          <label>Question-{{$index+1}}</label>
+          <input ng-model="ques.Question">
+        </md-input-container>         
+
+            <div layout="column">
+             <div flex="50" ng-repeat="opt in PageQuesOption">
+               <md-input-container class="md-block">
+          <div layout="row">
+         <md-checkbox>
+              </md-checkbox>   <input ng-model="opt.OptionText"> </div>
+        </md-input-container>         
+              
+            </div></div>
+        </div>
+      </md-tab>
+    </md-tabs>
+        
+      </form>
+
+          </md-content>       
+
+    <md-dialog-actions layout="row">
+     
+      <span flex></span>
+      <md-button ng-click="answer('not useful')" >
+       Cancel
+      </md-button>
+      <md-button ng-click="answer('useful')" style="margin-right:20px;" >
+        Submit
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+
+<style>
+    md-input-container
+    {
+        margin:10px 0!important;
+    }
+</style>

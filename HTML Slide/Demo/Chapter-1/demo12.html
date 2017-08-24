@@ -1,0 +1,76 @@
+
+<section class="section">
+  <div class="columns">
+    <div class="column header-bg">
+      <h1 class="sort-heading">SORT</h1>
+    </div>
+  </div>
+  <div class="columns masthead">
+    <div class="column">
+      <h2 class="mastheadtitle">Weapons of Mass Destruction</h2>
+    </div>
+  </div>
+  <div class="columns">
+  <div class="column is-half has-text-centered right-img-bdr"> <img src="HTML%20Slide/images/demo12.jpg" class="img-responsive e1" width="100%" alt="" style="opacity:0"> </div>
+  <div class="column left-section">
+    <p class="e2" style="opacity:0"><strong>Biological weapons</strong> are used to spread mass disease.</p>
+    <p class="e3" style="opacity:0">They are inexpensive and difficult to detect once they are deployed (used).</p>
+    <p class="e4" style="opacity:0">These types of weapons are not widely used by terrorists because they are dangerous to produce.</p>
+    <p class="e5" style="opacity:0">Examples of biological weapons include anthrax, botulism and smallpox.</p>
+    <p class="e6" style="opacity:0"><strong>Nuclear weapons</strong> are used to cause mass devastation to human life and property.</p>
+    <p class="e7" style="opacity:0">These types of weapons are expensive and difficult to produce. </p>
+    <p class="e8" style="opacity:0">Their effects include death, radiation burns, poisoning and cancer.</p>
+    <p class="e9" style="opacity:0"><strong>Incendiary weapons</strong> are used to start fires. </p>
+    <p class="e10" style="opacity:0">These types of weapons are easy to make and are most commonly used to destroy property.</p>
+  </div>
+</section>
+<audio autoplay>
+  <source src="audio/demo12.mp3" type="audio/mp3">
+</audio>
+<script>
+
+
+ Tweene.registerMacro('slideUp', function (duration) {
+            this.from({opacity:0,x:'-=200'})
+                .to({ opacity:1, x: '0' })
+                .duration(duration || Tweene.defaultDuration);
+        });
+       // var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+     
+        var child1 = Tweene.get($('.sort-heading')).to({ opacity: 1}, 2000, 'easeOutQuad');
+        var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+        var child3 = Tweene.get($('.e1')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child4 = Tweene.get($('.e2')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child5 = Tweene.get($('.e3')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child6 = Tweene.get($('.e4')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child7 = Tweene.get($('.e5')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child8 = Tweene.get($('.e6')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child9 = Tweene.get($('.e7')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child10 = Tweene.get($('.e8')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child11 = Tweene.get($('.e9')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	 var child12 = Tweene.get($('.e10')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+    
+
+	
+	
+
+
+        var t = Tweene.line();
+        t.add(child1).add(child2, 100).add(child3, 2000).add(child4, 2000).add(child5, 6000).add(child6, 11000).add(child7, 17000).add(child8, 25000).add(child9, 32000).add(child10, 36000).add(child11, 42000).add(child12, 47000);
+      
+        function animateElems() {
+            // define element variables
+            t.play();
+           // $.Velocity.RunSequence(sequence);
+        }
+
+        function stopAnimation() {
+            t.pause();
+        }
+        function resumeAnimation() {
+            t.resume();
+        }
+
+        animateElems();
+
+    </script> 

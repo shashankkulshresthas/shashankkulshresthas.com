@@ -1,0 +1,66 @@
+
+<section class="section" id="target">
+  <div class="columns">
+    <div class="column header-bg">
+      <h1 class="sort-heading">SORT</h1>
+    </div>
+  </div>
+  <div class="columns masthead">
+    <div class="column">
+      <h2 class="mastheadtitle" style="opacity: 1; transform: translateX(0px);">Introduction</h2>
+    </div>
+  </div>
+  <div class="columns demo-bg-6">
+    <div class="column is-7 ">
+      <div class="column is-9 container has-text-centered">
+        <h3 class="check-heading">Video<span class="fa fa-check-square-o"></span></h3>
+      </div>
+    </div>
+    <div class="column is-5">
+      <p class="e1" style="opacity: 1; margin-top: 50px; font-size: 24px;">You are about to watch a short video clip.  Please click the Next button and wait for the video to load and to begin playing.</p>
+    </div>
+  </div>
+</section>
+<audio autoplay>
+  <source src="audio/demo6.mp3" type="audio/mp3">
+</audio>
+<script>
+
+
+ Tweene.registerMacro('slideUp', function (duration) {
+            this.from({opacity:0,x:'-=200'})
+                .to({ opacity:1, x: '0' })
+                .duration(duration || Tweene.defaultDuration);
+        });
+       // var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+     
+        var child1 = Tweene.get($('.sort-heading')).to({ opacity: 1}, 2000, 'easeOutQuad');
+        var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+        var child3 = Tweene.get($('.e1')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child4 = Tweene.get($('.e2')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child5 = Tweene.get($('.e3')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+    
+
+	
+	
+
+
+        var t = Tweene.line();
+        t.add(child1).add(child2, 100).add(child3, 2000).add(child4, 9000).add(child5, 15000);
+      
+        function animateElems() {
+            // define element variables
+            t.play();
+           // $.Velocity.RunSequence(sequence);
+        }
+
+        function stopAnimation() {
+            t.pause();
+        }
+        function resumeAnimation() {
+            t.resume();
+        }
+
+        animateElems();
+
+    </script> 

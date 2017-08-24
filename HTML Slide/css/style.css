@@ -1,0 +1,44 @@
+/********************Created by vaihav***********************/
+
+.demo-bg-1 {
+	background: url(../images/demo1-a.png) center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 595px;
+}
+.demo-bg-2 {
+	background: url(../images/demo2.jpg) center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 567px;
+}
+.demo-bg-3 {
+	background: url(../images/demo3.jpg) center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 250px;
+}
+.demo-bg-6 {
+	background: url(../images/intro-base-2.jpg) center;
+	background-size: cover;
+	height: 70vh;
+	color: #fff;
+}
+.demo8-bg {
+	background: url(../images/intro-base-2.jpg) center;
+	background-size: cover;
+	height: 70vh;
+	color: #fff;
+}
+ 
+
+/**GAGAN**/
+
+
+.demo-bg-11{
+	background:url(../images/demo11.jpg) center;
+	background-repeat:no-repeat;
+	background-size:cover;
+    height: 200px;
+}
+

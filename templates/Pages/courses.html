@@ -1,0 +1,53 @@
+<!--Main layout-->
+
+<div class="container-fluid">
+    <br>
+
+    <!--Divider-->
+    <div class="divider-new md-padding" flex="100">
+        <h2 class="h2-responsive ">Course Options</h2>
+    </div>
+
+  
+    <section id="mandatory-exam" class="section">
+        
+        <!--Section description-->
+
+        <!--/Mandatory row-->
+        <div layout="row" flex layout-wrap>
+            <div flex-xs="100" flex-sm="50" flex-md="50" flex="25" ng-repeat="MCourse in MandatoryCourses" class="wow fadeIn center" data-wow-delay="0.2s">
+                <md-card>
+          <md-card-content class="card-block text-xs-left" style="min-height:255px;">
+            
+                                <!--Category & Title-->
+                               <h4 class="card-title"><strong>{{MCourse.CourseName}}</strong></h4>
+                                
+
+                                <!--Description-->
+                                <p class="card-text">{{MCourse.Description}}</p>
+
+                                <!--Card footer-->
+                               
+          </md-card-content>
+          <div class="md-actions" layout="row" layout-align="end center"  style="font-size: 1.3rem;">
+          ${{MCourse.Price}}
+                <span flex></span>
+                             <md-button class="md-raised md-primary" ng-click="AddToCart(MCourse,'Course')">Buy</md-button>
+                              <!--  <a data-toggle="tooltip" data-placement="top" title="Add to Cart" >
+                                     <i class="fa  fa-shopping-cart">&nbsp;&nbsp;&nbsp;</i></a> -->                       
+                                                               
+          </div>
+        </md-card>
+            </div>
+        </div>
+
+
+    </section>
+    <!--/Section: Products v.1-->
+
+
+    <hr class="between-sections">
+</div>
+
+<!--/Main layout-->
+

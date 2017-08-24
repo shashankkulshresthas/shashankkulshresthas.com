@@ -1,0 +1,71 @@
+
+<section class="section">
+  <div class="columns">
+    <div class="column header-bg">
+      <h1 class="sort-heading">SORT</h1>
+    </div>
+  </div>
+  <div class="columns masthead">
+    <div class="column">
+      <h2 class="mastheadtitle">Weapons of Mass Destruction</h2>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-centered right-img-bdr"> <img src="HTML%20Slide/images/demo13.jpg" class="img-responsive e1" width="100%" alt="" style="opacity:0"> </div>
+    <div class="column left-section">
+      <p class="e2" style="opacity:0"><strong>Chemical weapons</strong> are extremely dangerous and usually have immediate effects on people. </p>
+      <p class="e3" style="opacity:0">These weapons can be inhaled, swallowed or absorbed through the skin.</p>
+      <p class="e4" style="opacity:0">They are easy to make and readily available.</p>
+      <p class="e5" style="opacity:0">Examples of chemical weapons include cyanide and sarin.</p>
+      <p class="e6" style="opacity:0"><strong>Explosive weapons</strong> are used in approximately 70% of terrorist attacks.</p>
+      <p class="e7" style="opacity:0">These types of weapons are commonly used because they are dramatic and can easily be detonated from a distance.</p>
+    </div>
+  </div>
+</section>
+<audio autoplay>
+  <source src="audio/demo13.mp3" type="audio/mp3">
+</audio>
+<script>
+
+
+ Tweene.registerMacro('slideUp', function (duration) {
+            this.from({opacity:0,x:'-=200'})
+                .to({ opacity:1, x: '0' })
+                .duration(duration || Tweene.defaultDuration);
+        });
+       // var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+     
+        var child1 = Tweene.get($('.sort-heading')).to({ opacity: 1}, 2000, 'easeOutQuad');
+        var child2 = Tweene.get($('.mastheadtitle')).exec('slideUp', '800ms');
+        var child3 = Tweene.get($('.e1')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child4 = Tweene.get($('.e2')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+        var child5 = Tweene.get($('.e3')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	var child6 = Tweene.get($('.e4')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	var child7 = Tweene.get($('.e5')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+	var child8 = Tweene.get($('.e6')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+		var child9 = Tweene.get($('.e7')).to({ opacity: 1 }, 2000, 'easeOutQuad');
+    
+
+	
+	
+
+
+        var t = Tweene.line();
+        t.add(child1).add(child2, 100).add(child3, 2000).add(child4, 2000).add(child5, 8000).add(child6, 14000).add(child7, 17000).add(child8, 23000).add(child9, 30000);
+      
+        function animateElems() {
+            // define element variables
+            t.play();
+           // $.Velocity.RunSequence(sequence);
+        }
+
+        function stopAnimation() {
+            t.pause();
+        }
+        function resumeAnimation() {
+            t.resume();
+        }
+
+        animateElems();
+
+    </script> 

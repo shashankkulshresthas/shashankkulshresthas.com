@@ -1,0 +1,79 @@
+﻿
+
+<section ng-init="GetSelectedQuestionsByQuizId()" id="fullscreen">
+    <div class="activity-header">
+        <h3><b>Question</b></h3>
+    </div>
+    <div class="col-sm-12 exam-instruction" style="width:100%;">
+         <p><b>Attempting Question No <span id="questionCount">{{selectedIndex+1}}</span> of {{questions.length}}</b> <span class="pull-right">Start Time : {{CurrentDate | date:'hh:mm:ss a'}}</span></p>
+        <p>
+            <md-checkbox ng-model="questions[selectedIndex].SkipQuestion" aria-label="Check here to skip and answer later">
+           Check here to skip and answer later
+          </md-checkbox>
+            
+          <span class="pull-right btn btn-warning">Time Left : {{MaxTime | secondsToDateTime | date:'HH:mm:ss'}}</span></p>
+        <hr />
+        <p><b>Question</b></p>
+        <p>
+        <b>  {{questions[selectedIndex].QuestionDesc}}</b>
+        </p>
+      
+        <md-radio-group ng-model="questions[selectedIndex].rightAnswer">
+                        <md-radio-button  ng-repeat="opt in Options" value="{{opt.OptionId}}">{{ opt.OptionDesc }}</md-radio-button>
+   </md-radio-group>
+ 
+               
+        <!--<div class="radio-list" id="questionOpt">
+            <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Radio28" value="option1" checked>
+                Location of the bomb
+            </label>
+        </div>
+             <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" id="Radio29" value="option1" checked>
+                Location of the bomb
+            </label>
+        </div>
+        </div>-->
+        <p>&nbsp;</p>
+        <p>
+            <button type="button" class="btn btn-primary btn-lg" ng-show="selectedIndex>0"  ng-click="prevQuest($event)">Previous Question</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-disabled="!questions[selectedIndex].rightAnswer && !questions[selectedIndex].SkipQuestion" ng-show="questions.length>selectedIndex+1" ng-click="nextQuest($event)">Next Question</button>
+             <button type="button" class="btn btn-primary btn-lg" ng-disabled="!questions[selectedIndex].rightAnswer && !questions[selectedIndex].SkipQuestion" ng-show="questions.length==selectedIndex+1" ng-click="nextQuest($event)">Finish</button>
+         
+              
+        </p>
+       <!-- <p>
+<a href="#" class="open">Open Fullscreen</a>
+<a href="#" class="close hide" >Exit fullscreen</a>
+</p>-->
+    </div>
+   <script type="text/javascript">
+       $(function () {
+         
+           $('.open').click(function () {
+               $('#fullscreen').fullscreen();
+               return false;
+           });
+           $('.close').click(function () {
+               $.fullscreen.exit();
+               return false;
+           });
+                     
+       });
+       $(document).bind('fscreenchange', function (e, state, elem) {
+           // if we currently in fullscreen mode
+           if ($.fullscreen.isFullScreen()) {
+               $('#fullscreen .open').hide();
+               $('#fullscreen .close').show();
+           } else {
+               $('#fullscreen .open').show();
+               $('#fullscreen .close').hide();
+           }
+
+           $('#state').text($.fullscreen.isFullScreen() ? '' : 'not');
+       });
+</script>
+</section>

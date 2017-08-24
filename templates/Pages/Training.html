@@ -1,0 +1,111 @@
+﻿
+<main class="pt-1">
+    <div class="" style="margin-bottom:25px;">
+
+<div class="overlay" style="display: none;"></div>
+<!-- Player Section -->
+
+<div layout="row" flex layout-wrap>
+    <div flex-xs="100" flex-sm="30" flex-md="20" flex="30">
+        <div class="module-section" >
+
+            <h3 ng-repeat="y in GetMandateCourseModuleNameById"><i class="fa fa-folder-o"></i>&nbsp;&nbsp;{{y.CourseName}}&nbsp;&nbsp;/&nbsp;&nbsp;<span>{{y.ModuleName}}</span></h3>
+            <span class="course-button" id="mobileView"><i class="fa fa-bars"></i></span>
+             <ul class="mobile-view">              
+
+                <li ng-repeat="x in Pages" ng-class="{'active': x.PageId == currPageId}">
+
+                    <a id="btn" ng-click="x.isEnable && LoadSlide(x.PageId,x.hasQuiz)">
+                  <span class="count-page">  {{x.DisplaySequence}}.</span> 
+                        {{x.PageName}}                       
+                         <span class="pull-right" ng-show="x.PageId == currPageId">
+                            <i class="fa fa-arrow-circle-right"></i>
+
+                        </span>
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+         
+    </div>
+    <section flex-xs="100" flex-sm="{{FlexSM}}" flex-md="{{FlexMD}}" flex="{{Flex}}">
+       
+       <div class="playersection" >
+            <!-- Selected Page: {{SelectedPage.PageName}}-->            
+       
+            <ui-view layout="column" layout-fill md-theme="default1">
+         
+          
+        </ui-view>
+        </div>
+        
+    </section>
+
+</div>
+        </div>
+    </main>
+<script>
+
+    $("#defaultAnimation").velocity(
+  {
+      scale: 1
+  },
+  {
+      duration: 800,
+      display: "block"
+  });
+
+    $("#mobileView").click(function () {
+        // alert('test');
+        $(".mobile-view").toggleClass("nav-show");
+        $(".overlay").fadeIn('fast');
+        event.preventDefault()
+
+    });
+    $(".overlay").click(function () {
+        //alert('test');
+        $(".mobile-view").removeClass("nav-show");
+        $(".overlay").fadeOut('fast');
+
+    });
+
+
+
+
+
+</script>
+
+
+
+
+
+<script>
+    function FullScreen() {
+
+        var el = document.getElementById("container");
+        var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen
+        || el.mozRequestFullScreen || el.msRequestFullScreen;
+
+        if (requestMethod) {
+
+            requestMethod.call(el);
+
+        } else if (typeof window.ActiveXObject !== "undefined") {
+
+            var wscript = new ActiveXObject("WScript.Shell");
+
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+</script>
+
+<!--<script type="text/javascript">
+    function display(pg,con) {
+     //   var id = $(el).attr('id');
+        $('#container1').load('../HTML%20Slide/'+pg+' #'+con);
+        alert(pg+'  '+con);
+    }
+</script>-->
